@@ -7,7 +7,7 @@ const feedbackConsumer = require('./feedback-consumer');
 const Campaign = require('../models').campaign;
 
 let redisSettings = null;
-if(process.env.HEROKU){
+if(process.env.REDIS_URL){
   redisSettings = {url: process.env.REDIS_URL}
 }else{
   redisSettings = { host: process.env.REDIS_HOST || '127.0.0.1' }
